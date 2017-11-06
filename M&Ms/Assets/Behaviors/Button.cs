@@ -21,7 +21,7 @@ public class Button : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             var otherPlayer = other.gameObject.GetComponent<PlayerController>();
-            otherPlayer.Destroy += OtherPlayer_Destroy;
+            otherPlayer.Destroyed += OtherPlayer_Destroy;
             entitiesPressing++;
         }
     }
@@ -30,7 +30,7 @@ public class Button : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             var otherPlayer = other.gameObject.GetComponent<PlayerController>();
-            otherPlayer.Destroy -= OtherPlayer_Destroy;
+            otherPlayer.Destroyed -= OtherPlayer_Destroy;
             entitiesPressing--;
         }
     }
@@ -38,6 +38,6 @@ public class Button : MonoBehaviour
     private void OtherPlayer_Destroy(object sender, System.EventArgs e)
     {
         entitiesPressing--;
-        ((PlayerController)sender).Destroy -= OtherPlayer_Destroy;
+        ((PlayerController)sender).Destroyed -= OtherPlayer_Destroy;
     }
 }

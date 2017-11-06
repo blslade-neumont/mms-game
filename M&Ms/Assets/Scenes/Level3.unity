@@ -1155,7 +1155,7 @@ MonoBehaviour:
   recordCrystalsRequired: 3
   recordDuration: 8
   recordRewindSpeed: 2
-  ignoreCrystalCount: 1
+  ignoreCrystalCount: 0
   timeState: 0
   timeStateDuration: 0
   timeBetweenGC: 3

@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
         moveVector += new Vector3(0, this.vspeed, 0);
         this.characterController.Move(moveVector * deltaTime);
         if (this.characterController.isGrounded) this.vspeed = 0;
+
+        if ((this.slave == null || this.slave.recordingPhantomFor == null) && Input.GetButton("Restart"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     private void OnDrawGizmos()
@@ -61,8 +66,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
-        var destroy = Destroy;
+        var destroy = Destroyed;
         if (destroy != null) destroy.Invoke(this, EventArgs.Empty);
     }
-    public event EventHandler Destroy;
+    public event EventHandler Destroyed;
 }
