@@ -30,6 +30,7 @@ public class TimeController : MonoBehaviour
     [SerializeField] public int recordCrystals = 0;
     [SerializeField] public int recordCrystalsRequired = 3;
     [SerializeField] public int recordDuration = 5;
+    [SerializeField] public int recordRewindSpeed = 5;
 
     [SerializeField] public bool ignoreCrystalCount = false;
 
@@ -54,7 +55,6 @@ public class TimeController : MonoBehaviour
             this.timeStateDuration -= Time.deltaTime;
             if (this.timeStateDuration <= 0) deltaTime += this.timeStateDuration;
         }
-        
         currentTime += deltaTime * this.timeScale;
 
         var prevState = this.timeState;
@@ -62,7 +62,7 @@ public class TimeController : MonoBehaviour
         {
             if (this.timeState == TimeState.Recording)
             {
-                this.timeStateDuration = this.recordDuration / 5;
+                this.timeStateDuration = this.recordDuration / this.recordRewindSpeed;
                 this.timeState = TimeState.RewindingRecording;
             }
             else if (this.timeState == TimeState.RewindingRecording)
@@ -215,7 +215,7 @@ public class TimeController : MonoBehaviour
                 return -1;
 
             case TimeState.RewindingRecording:
-                return -5;
+                return -this.recordRewindSpeed;
 
             default:
                 throw new NotImplementedException();

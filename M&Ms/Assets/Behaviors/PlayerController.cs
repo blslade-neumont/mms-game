@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -57,4 +58,11 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawRay(this.transform.position, sideways);
     }
+
+    private void OnDestroy()
+    {
+        var destroy = Destroy;
+        if (destroy != null) destroy.Invoke(this, EventArgs.Empty);
+    }
+    public event EventHandler Destroy;
 }
