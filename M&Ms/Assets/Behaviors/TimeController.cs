@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -54,28 +55,7 @@ public class TimeController : MonoBehaviour
             if (this.timeStateDuration <= 0) deltaTime += this.timeStateDuration;
         }
         
-        float timeScale = 1;
-        switch (this.timeState)
-        {
-        case TimeState.Normal:
-        case TimeState.Recording:
-        case TimeState.PlaybackRecording:
-            timeScale = 1;
-            break;
-
-        case TimeState.Paused:
-            timeScale = 0;
-            break;
-
-        case TimeState.Rewinding:
-            timeScale = -1;
-            break;
-
-        case TimeState.RewindingRecording:
-            timeScale = -5;
-            break;
-        }
-        currentTime += deltaTime * timeScale;
+        currentTime += deltaTime * this.timeScale;
 
         var prevState = this.timeState;
         if (this.timeStateDuration <= 0 && this.timeState != TimeState.Normal)
@@ -215,5 +195,31 @@ public class TimeController : MonoBehaviour
     public void RemoveState(TimeSlave slave)
     {
         this.removeQuantumState(slave);
+    }
+
+    public float timeScale
+    {
+        get
+        {
+            switch (this.timeState)
+            {
+            case TimeState.Normal:
+            case TimeState.Recording:
+            case TimeState.PlaybackRecording:
+                return 1;
+
+            case TimeState.Paused:
+                return 0;
+
+            case TimeState.Rewinding:
+                return -1;
+
+            case TimeState.RewindingRecording:
+                return -5;
+
+            default:
+                throw new NotImplementedException();
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ public class TimeSlave : MonoBehaviour
     [SerializeField] public TimeSlave recordingPhantomFor = null;
     [SerializeField] public bool ignorePause = false;
     [SerializeField] public bool ignoreRewind = false;
+    [SerializeField] public bool canCreatePhantom = true;
 
     [SerializeField] public bool isActive = true;
     [SerializeField] public object extraState = null;
@@ -67,7 +68,7 @@ public class TimeSlave : MonoBehaviour
     public void TriggerTimeStateChanged()
     {
         this.gameObject.SendMessage("TimeStateChanged", SendMessageOptions.DontRequireReceiver);
-        if (this.time.timeState == TimeState.PlaybackRecording)
+        if (this.time.timeState == TimeState.PlaybackRecording && this.canCreatePhantom)
         {
             var clone = Instantiate(this.gameObject);
             var phantomTimeSlave = clone.GetComponent<TimeSlave>();

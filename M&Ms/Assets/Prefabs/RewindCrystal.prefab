@@ -9,48 +9,77 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1867978063657598}
+  m_RootGameObject: {fileID: 1901589481143864}
   m_IsPrefabParent: 1
---- !u!1 &1867978063657598
+--- !u!1 &1807425621932038
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4998854272606466}
-  - component: {fileID: 33347390624988932}
-  - component: {fileID: 136085120884700508}
-  - component: {fileID: 23156171464761746}
-  - component: {fileID: 143994638107265564}
-  - component: {fileID: 114005638539933584}
-  - component: {fileID: 114680121893458850}
-  m_Layer: 8
-  m_Name: Player
-  m_TagString: Player
+  - component: {fileID: 4608690841034838}
+  - component: {fileID: 33044873165396042}
+  - component: {fileID: 135754907227694020}
+  - component: {fileID: 23699351717944522}
+  - component: {fileID: 114064014189716392}
+  - component: {fileID: 114912468447648736}
+  - component: {fileID: 114370912321253590}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4998854272606466
+--- !u!1 &1901589481143864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4264847922560592}
+  m_Layer: 0
+  m_Name: RewindCrystal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4264847922560592
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1867978063657598}
+  m_GameObject: {fileID: 1901589481143864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.086, y: 1.469, z: -1.924}
+  m_LocalPosition: {x: 1.042, y: 0, z: 1.615}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4608690841034838}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23156171464761746
+--- !u!4 &4608690841034838
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807425621932038}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
+  m_LocalScale: {x: 0.40000024, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4264847922560592}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!23 &23699351717944522
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1867978063657598}
+  m_GameObject: {fileID: 1807425621932038}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +87,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d44ccfb1166c01d4db8ee307d4ad73cf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,34 +106,34 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33347390624988932
+--- !u!33 &33044873165396042
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1867978063657598}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114005638539933584
+  m_GameObject: {fileID: 1807425621932038}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114064014189716392
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1867978063657598}
+  m_GameObject: {fileID: 1807425621932038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10ea987f0c51ddb4885a82b90594d938, type: 3}
+  m_Script: {fileID: 11500000, guid: add5af7a889cf5a41b72a1933ab03a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraController: {fileID: 0}
-  moveSpeed: 8
-  jumpSpeed: 6
-  gravityConst: 9.81
---- !u!114 &114680121893458850
+  bounceMax: 1.2
+  bounceMin: 0.4
+  cycleDuration: 2
+  rotationAdd: -60
+--- !u!114 &114370912321253590
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1867978063657598}
+  m_GameObject: {fileID: 1807425621932038}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f63278767de76e40a0ba73b0654d715, type: 3}
@@ -112,37 +141,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 0}
   recordingPhantomFor: {fileID: 0}
-  ignorePause: 1
-  ignoreRewind: 1
-  canCreatePhantom: 1
+  ignorePause: 0
+  ignoreRewind: 0
+  canCreatePhantom: 0
   isActive: 1
---- !u!136 &136085120884700508
-CapsuleCollider:
+--- !u!114 &114912468447648736
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1867978063657598}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 1807425621932038}
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!143 &143994638107265564
-CharacterController:
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a795b7280b8d989489469d096d73d95d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystalRootObject: {fileID: 1901589481143864}
+  type: 1
+--- !u!135 &135754907227694020
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1867978063657598}
+  m_GameObject: {fileID: 1807425621932038}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
