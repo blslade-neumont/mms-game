@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(TimeSlave))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] CameraController cameraController;
@@ -12,14 +13,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float gravityConst = 9.81f;
 
     private CharacterController characterController;
+    private TimeSlave timeSlave;
     private float vspeed;
 
     void Start()
     {
         this.characterController = GetComponent<CharacterController>();
+        this.timeSlave = GetComponent<TimeSlave>();
     }
 
-    void Update()
+    void NormalUpdate()
     {
         var horiz = Input.GetAxis("Horizontal");
         var vert = Input.GetAxis("Vertical");
